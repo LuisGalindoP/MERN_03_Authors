@@ -52,7 +52,11 @@ const AllAuthors = (props) => {
                                 className={'bg-red-300 rounded px-1'}>
                                 delete
                             </button>
-                            <p>Update</p>
+                            <Link to={`/edit/${aut._id}`}
+                                className={'bg-green-300 rounded px-1'}>
+                                update
+                            </Link>
+
                         </td>
                     </tr>
                     )

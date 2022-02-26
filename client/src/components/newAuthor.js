@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const NewAuthor = (props) => {
     const {authors, setAuthors} = props;
-    const [name, setName] = useState({})
+    const [name, setName] = useState()
     const [errors, setErrors] = useState({});
 
     const formHandler = (event) => {
@@ -13,12 +13,12 @@ const NewAuthor = (props) => {
             name
         })
             .then((response)=>{
-                setAuthors([...authors, response.data]);
                 console.log(response.data);
-                navigate('/').then(()=>{})
+                setAuthors([...authors, response.data]);
+                navigate('/').then(()=>{});
             })
             .catch((error) => {
-                // console.log(error);
+                console.log(error);
                 console.log(error.response.data.errors);
                 setErrors(error.response.data.errors);
             });

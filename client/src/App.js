@@ -18,7 +18,10 @@ function App() {
             authors = {authors}
             setAuthors={setAuthors}
         />
-        <UpdateAuthor path={'/edit/:id'}/>
+        <UpdateAuthor path={'/edit/:id'}
+            authors = {authors}
+            setAuthors={setAuthors}
+        />
       </Router>
     </div>
   );

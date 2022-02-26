@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 const AuthorSchema = new mongoose.Schema({
     name: {
-        type: 'string',
+        type: String,
         required: [true, 'Add a name'],
-        minlength: [3, 'Minimum name length is 3']
-    }
+        minlength: [3, 'Name must be at least 3 characters']
+    },
 }, {timestamps: true});
 
 const Author = mongoose.model('Author', AuthorSchema);

@@ -36,9 +36,9 @@ module.exports = {
                 console.log(newAuthor);
                 response.json(newAuthor);
             })
-            .catch(error => {
-                // console.log('Error in addAuthor');
-                response.status(400).json(error);
+            .catch((err)=> {
+                console.log(`Error in addNewPet ${err}`);
+                response.status(400).json(err);
             })
     },
 
