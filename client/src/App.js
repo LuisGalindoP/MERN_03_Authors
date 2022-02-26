@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import {Router} from '@reach/router'
+
+import AllAuthors from "./components/allAuthors";
+import NewAuthor from "./components/newAuthor";
+import UpdateAuthor from "./components/updateAuthor"
 
 function App() {
+    const [authors, setAuthors] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <AllAuthors path={'/'}
+            authors = {authors}
+            setAuthors={setAuthors}
+        />
+        <NewAuthor path={'/new'}
+            authors = {authors}
+            setAuthors={setAuthors}
+        />
+        <UpdateAuthor path={'/edit/:id'}/>
+      </Router>
     </div>
   );
 }
